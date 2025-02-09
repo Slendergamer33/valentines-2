@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+html {
+  overflow: hidden;
+}
+#hvd {
+  font-size: 45px;
+  font-family: 'Satisfy', cursive;
+}
+#wybmv {
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
+}
+#text-container {
+  text-align: center;
+}
+#margin-container {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -162px;
+}
+.round {
+  height: 112px;
+  width: 112px;
+  background-color: #FFA3A3;
+  border-radius: 100%; 
+  display: inline-block; 
+  margin: -7px; 
+  animation: 1s beat infinite; 
+}
+.square {
+  height: 116px; 
+  width: 116px; 
+  background-color: #FFA3A3; 
+  position: absolute; 
+  transform: scale(1) rotate(45deg); 
+  left: 92px; 
+  top: 48px; 
+  border-radius: 100px 0px 10px 0px; 
+  animation: 1s beat infinite; 
+}
+#container {
+  padding-top: 10px; 
+  padding-right: 10px; 
+  padding-bottom: 10px; 
+  padding-left: 50px; 
+}
+@keyframes beat {
+  0% {transform: scale(1) rotate(45deg);}
+  50% {transform: scale(1.1) rotate(45deg);}
+  100% {transform: scale(1) rotate(45deg);} 
+}
+@media only screen and (max-device-width: 480px) {
+  #container {
+    transform: scale(2.5);
+  }
+  #hvd {
+  font-size: 60px;
+  font-family: 'Satisfy', cursive;
+}
+#wybmv {
+  font-family: 'Satisfy', cursive;
+  font-size: 45px;
+}
+}
+#options {
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .option-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .option-btn:hover {
+    background-color: #ff1a1a;
+  }
+  
+  #gif-container img {
+    width: 300px; /* Adjust size */
+    height: auto;
+    margin-top: 20px;
+  }
+
+  #gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+    transform: scale(0.5); /* Scales it to 50% of the original size */
+}

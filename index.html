@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="text-container">
+        <span id="hvd">Dear Grace</span><br>
+        <span id="wybmv">Will you be my Valentine?</span>
+    </div>
+
+    <div id="margin-container">
+        <div id="container" onclick="showOptions()">
+            <div id="left" class="round"></div>
+            <div id="right" class="round"></div>
+            <div id="bottom" class="square"></div>
+        </div>
+    </div>
+
+    <div id="options">
+        <button class="option-btn" onclick="showGif()">Yes</button>
+        <button class="option-btn" onclick="showMessage()">No</button>
+    </div>
+
+    <div id="gif-container" style="display: none; text-align: center;"></div>
+
+    <script>
+        function showOptions() {
+            document.getElementById("options").style.display = "block";
+        }
+
+        function showGif() {
+    document.getElementById("gif-container").style.display = "block";
+    document.getElementById("options").style.display = "none";
+
+    // Inject Tenor GIF embed
+    document.getElementById("gif-container").innerHTML = `
+        <div class="tenor-gif-embed" data-postid="20135530" data-share-method="host" 
+             data-aspect-ratio="1.37931" data-width="100%">
+            <a href="https://tenor.com/view/dance-nsjdnsnd-kid-dancing-gif-20135530">Dance Nsjdnsnd GIF</a>
+            from <a href="https://tenor.com/search/dance-gifs">Dance GIFs</a>
+        </div>
+    `;
+
+    // Create and append script dynamically
+    let script = document.createElement("script");
+    script.src = "https://tenor.com/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+}
+
+        function showMessage() {
+            alert("Oh no! Maybe next time 💔");
+        }
+    </script>
+</body>
+</html>
