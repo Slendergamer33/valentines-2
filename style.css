@@ -1,138 +1,106 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
-
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #fff5f5;
+html {
+  overflow: hidden;
 }
-
-/* Text styling */
 #hvd {
-    font-size: 45px;
-    font-family: 'Satisfy', cursive;
-    color: #ff4d4d;
-    text-align: center;
+  font-size: 45px;
+  font-family: 'Satisfy', cursive;
 }
-
 #wybmv {
-    font-size: 30px;
-    font-family: 'Satisfy', cursive;
-    color: #ff4d4d;
-    text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
 }
-
 #text-container {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
 }
-
-/* Heart shape container */
 #margin-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    cursor: pointer;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -162px;
 }
-
 .round {
-    height: 100px;
-    width: 100px;
-    background-color: #ff4d4d;
-    border-radius: 50%;
-    position: absolute;
-    animation: beat 1s infinite;
+  height: 112px;
+  width: 112px;
+  background-color: #FFA3A3;
+  border-radius: 100%; 
+  display: inline-block; 
+  margin: -7px; 
+  animation: 1s beat infinite; 
 }
-
-#left {
-    top: -50px;
-    left: -50px;
-}
-
-#right {
-    top: -50px;
-    left: 50px;
-}
-
 .square {
-    height: 100px;
-    width: 100px;
-    background-color: #ff4d4d;
-    position: absolute;
-    transform: rotate(45deg);
-    border-radius: 20px;
-    animation: beat 1s infinite;
+  height: 116px; 
+  width: 116px; 
+  background-color: #FFA3A3; 
+  position: absolute; 
+  transform: scale(1) rotate(45deg); 
+  left: 92px; 
+  top: 48px; 
+  border-radius: 100px 0px 10px 0px; 
+  animation: 1s beat infinite; 
 }
-
-/* Heart beating animation */
+#container {
+  padding-top: 10px; 
+  padding-right: 10px; 
+  padding-bottom: 10px; 
+  padding-left: 50px; 
+}
 @keyframes beat {
-    0%, 100% { transform: scale(1) rotate(45deg); }
-    50% { transform: scale(1.1) rotate(45deg); }
+  0% {transform: scale(1) rotate(45deg);}
+  50% {transform: scale(1.1) rotate(45deg);}
+  100% {transform: scale(1) rotate(45deg);} 
 }
-
-/* Option buttons */
+@media only screen and (max-device-width: 480px) {
+  #container {
+    transform: scale(2.5);
+  }
+  #hvd {
+  font-size: 60px;
+  font-family: 'Satisfy', cursive;
+}
+#wybmv {
+  font-family: 'Satisfy', cursive;
+  font-size: 45px;
+}
+}
 #options {
     display: none;
+    position: fixed;
+    top: 60%;
+    left: 49%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-top: 20px;
-}
-
-.option-btn {
+  }
+  
+  .option-btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 20px;
     margin: 10px;
-    font-size: 18px;
-    color: white;
     background-color: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
-}
-
-.option-btn:hover {
-    background-color: #e60000;
-}
-
-/* GIF container */
-#gif-container {
-    display: none;
-    text-align: center;
+  }
+  
+  .option-btn:hover {
+    background-color: #ff1a1a;
+  }
+  
+  #gif-container img {
+    width: 300px; /* Adjust size */
+    height: auto;
     margin-top: 20px;
-}
+  }
 
-#gif-container .tenor-gif-embed {
-    max-width: 50%; /* Reduces GIF size to 50% of original */
-}
-
-/* Responsive design for mobile */
-@media (max-width: 480px) {
-    #hvd {
-        font-size: 35px;
-    }
-
-    #wybmv {
-        font-size: 25px;
-    }
-
-    #margin-container {
-        transform: scale(0.8);
-        margin-bottom: 20px;
-    }
-
-    .option-btn {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-
-    #gif-container .tenor-gif-embed {
-        max-width: 70%; /* Slightly larger on mobile */
-    }
+  #gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+    transform: scale(0.5); /* Scales it to 50% of the original size */
 }
